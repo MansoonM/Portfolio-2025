@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+
+    <title>Portfolio: Mansoon Mohanty</title>
+    <link rel="shortcut icon" href="/me.jpg" type="image/x-icon" />
+    <style>
+      /* css */
+      body {
+        background-color: rgb(24, 22, 22);
+        color: white;
+      }
+      span {
+        color: rgb(95, 95, 241);
+      }
+      .btn.btn-dark a {
+        color: white;
+        text-decoration: none;
+      }
+
+      .rounded {
+        height: 25rem;
+        /* margin: 4rem 5rem; */
+        border-radius: 50%;
+        transition: 0.3s ease-in-out;
+        box-shadow: 0 0 0.2rem rgb(3, 46, 187);
+      }
+      .rounded:hover {
+        height: 25.3rem;
+        box-shadow: 0 0 0.7rem rgb(3, 46, 187);
+      }
+      
+
+      .hobby h4 {
+        margin-top: 2rem;
+        color: rgb(253, 95, 4);
+        text-align: start;
+      }
+      .hobby ul {
+        text-align: center;
+        margin-top: 5%;
+        margin-left: 10%;
+      }
+      .hobby ul li {
+        /* list-style: none; */
+        text-align: left;
+      }
+      .hobby p {
+        margin-top: 1rem;
+      }
+      span {
+        color: rgb(83, 83, 255);
+      }
+      .hobby i {
+        letter-spacing: 1px;
+        gap: 5px;
+      }
+h3{
+  color: rgb(84, 84, 247);
+}
+      .links {
+        width: 100%;
+        /* margin-left: 8rem; */
+        margin-top: 3.5rem;
+        display: flex;
+        justify-content: space-evenly;
+      }
+      .links a {
+        font-size: 1.5rem;
+        color: orange;
+        transition: 0.3s ease-in-out;
+      }
+      .links a:hover {
+        font-size: 1.55rem;
+        color: green;
+      }
+
+      #carouselExampleControlsNoTouching{
+        margin-top: 4rem;
+        width: 37%;
+        text-align: center;
+        /* height: 400px; */
+      }
+      .carousel-item img{
+        height: 500px;
+      }
+      .copy p{
+        text-align: center;
+        margin-top: 1rem;
+        color: rgb(150, 147, 147);
+      }
+
+        /* media */
+      @media screen and (max-width: 880px) {
+        img {
+          width: 90%;
+          /* height: 235px; */
+        }
+        #carouselExampleControlsNoTouching{
+        margin-top: 4rem;
+        width: 60%;
+      
+      }
+    
+      }
+
+      @media screen and (max-width: 700px){
+        .carousel-item img{
+        height: 380px;
+      }
+      }
+
+      @media screen and (max-width: 580px) {
+        img {
+          width: 98%;
+          height: 200px;
+        }
+        #carouselExampleControlsNoTouching{
+        margin-top: 4rem;
+        margin-left: 2rem;
+        width: 78%;
+     
+      }
+      .carousel-item img{
+        height: 450px;
+      }
+      }
+      @media screen and (max-width: 446px){
+        .carousel-item img{
+        height: 420px;
+      }
+      }
+      @media screen and (max-width: 382px){
+        .carousel-item img{
+        height: 400px;
+      }
+      #carouselExampleControlsNoTouching{
+        margin-top: 4rem;
+        margin-left: 1rem;
+        width: 90%;
+     
+      }
+      }
+       
+    </style>
+  </head>
+  <body>
+    <!-- Landing Page  -->
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Portfolio of Mansoon</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div
+          class="collapse navbar-collapse justify-content-end"
+          id="navbarNav"
+        >
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="index.html"
+                >Home</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/2_about.html">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/3_skills.html">Skills</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="/4_projects.html">Projects</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="/5_experience.html">Experience</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link active" href="/6_hobbies.html">Hobbies</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="/7_contact.html">Contact</a>
+            </li>
+            <a href=""></a>
+            <!--for space-->
+
+            <li class="nav-item">
+              <a class="nav-link" href="#"></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#"></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- body of home page -->
+    <div class="container">
+      <br />
+      <h1>My hobbies</h1>
+
+      <!-- hobby 1 -->
+      <div class="hobby">
+        <h4>1. Reading Books</h4>
+        <p>
+          Books like <span>Psychology or Self-Help Books</span> like(<i
+            >The Power of your Subconcious Mind, The 48 Laws of Power, The
+            Secret, Power of Now, Rich Dad Poor Dad, Ego is Enemy, The 5 am
+            Club,The Power Of Habits, 12 rules for Life, The Psychology of
+            Money, Surrounded by Idiots, Surrounded by Narsissts, Surrounded by
+            Psychopaths etc</i
+          >) and <span>Frictional books</span> like
+          <i></i>
+            A brief History of Time, The Grand Design, Blackholes and baby
+            universe, Brief Answer to the big questions , Verity, If we were
+            Villians, Metamorphosis, Reminders of Him, The Trial, Crime and
+            Punishment, The Book Thief, What is inside a blackhole , I don't love you anymore, Warmth, The
+            girl who knew too much, The girl in room 105 etc...</i
+          >
+        </p>
+        <img src="https://images.pexels.com/photos/1370295/pexels-photo-1370295.jpeg?cs=srgb&dl=bookcase-books-bookshelf-1370295.jpg&fm=jpg"  alt="" height="280px" width="60%">
+        <br>
+      </div>
+<br><br> <hr>
+
+ <!-- hobby 2 -->
+      <div class="hobby">
+        <h4>2. Playing Games</h4>
+        <p>
+         1. Indoor Games : <i>Chess, Ludo, Animal Cards, Business </i><br>
+         2. Outdoor Games : <i>Badminton, Football</i> <br>
+         3. Mobile Games : <i>BGMI, Chess, Temple Run, Vegas Crime, Car Parking, Craftman 4</i>
+        </p>
+        <img src="https://th.bing.com/th/id/R.bc937577602afdad37295b44926296e6?rik=8lLyp06GOWveUg&riu=http%3a%2f%2f3bonline.files.wordpress.com%2f2013%2f04%2fchess-pieces-2b.jpg&ehk=iLINPJ6YUGP5QOr%2bE4CBijXSv4%2bHmBPF6TbI68DOp0g%3d&risl=&pid=ImgRaw&r=0"  alt="" height="380px" width="60%">
+        <br>
+      </div>
+      <br><br> <hr>
+
+
+<!-- hobby 3 -->
+<div class="hobby">
+    <h4>3. Watching K-dramas, Movies </h4>
+    <p>
+     1. K-Dramas : <i>Business Proposal, Start-up, The Tale of Nine Tailed, My Love from Stars, The Queen of Tears, What's Wrong with Secretary Kim etc... </i><br>
+     2. Frictional Movies/ Web Series : <i>Wednesday, Squid Game, The Silent Sea , Avengers, Spider Man, Ironman, Hulk, Captain America etc...</i> <br>
+     3. Other Movies : <i>Bahubali, Robot, RRR, Bramhastra, Adipurush, 3 idiots, Student of The Year etc... </i>
+    </p>
+    <img src="https://cdn-p.smehost.net/sites/7f9737f2506941499994d771a29ad47a/wp-content/uploads/2022/06/Wednesday-Addams.png"  alt="" height="380px" width="60%">
+    <br>
+  </div>
+  <br><br> <hr>
+
+<!-- hobby 4 -->
+<div class="hobby">
+    <h4>4. Listening to Music </h4>
+    <p>
+     1. K-Pop Songs : <i>BTS Songs like DNA, RUN, Dynamite, NO, Forever Young, Idol, So far Away (Suga) Blackpink Songs like Kill This Love, Pretty Savage, On the Ground(Rose), SOLO (Jennie), Money (Lisa)  etc...</i><br>
+     2. English Songs : <i>Sasha Alex Sloan's Song like Older, Only Child, House With no Mirrors, Dancing With your Ghost, I'll Wait, Hero... Other songs like Waving Flags, That's so true, Love Yourself, Happier, Summertime Sadness, Wolves, Shameless, Closer, Believer, shape of you, Don't let me down, Tattoo, Unstoppable, Gangsta's Paradise, She Knows, Die for you, Die with a smile etc...</i> <br>
+     3. Other songs : <i>almost all hindi songs</i>
+    </p>
+    <img src="https://i.pinimg.com/originals/f7/12/d7/f712d72125fba3b1331ab3648ae356db.jpg"  alt="" height="380px" width="60%">
+    <br>
+  </div>
+  <br><br> <hr>
+
+
+
+<!-- hobby 5 -->
+<div class="hobby">
+    <h4>5. Travelling</h4>
+    <p>
+      Travel is the movement of people between distant geographical locations. Travel can be done by foot, bicycle, automobile, train, boat, bus, airplane, ship or other means, with or without luggage, and can be one way or round trip. Travel can also include relatively short stays between successive movements, as in the case of tourism.
+     <!-- <ol>
+        <li>Travelling</li>
+        <li>Driving</li>
+        <li>Cooking</li>
+        <li>Poems</li>
+        <li>Gardening</li>
+        <li>Exercise</li>
+     </ol> -->
+    </p>
+    <img src="https://th.bing.com/th/id/OIP.cKIbTkRLh6xPUrQ5GzNqdwHaE8?rs=1&pid=ImgDetMain"  alt="" height="380px" width="60%">
+    <br>
+  </div>
+  <br><br> <hr>
+
+  <!-- hobby 6 -->
+<div class="hobby">
+  <h4>6. Cooking</h4>
+  <p>
+   Cooking is a form of therapy that combines the therapeutic benefits of cooking with the principles of psychology and mental health treatment. Culinary therapy involves working with a therapist who specializes in this approach.
+   <!-- <ol>
+      <li>Poems</li>
+      <li>Gardening</li>
+      <li>Exercise</li>
+   </ol> -->
+  </p>
+  <img src="https://draxe.com/wp-content/uploads/2020/07/shutterstock_1562611978-1.jpg"  alt="" height="380px" width="60%">
+  <br>
+</div>
+<br><br> <hr>
+
+ <!-- hobby 7 -->
+ <div class="hobby">
+  <h4>7. Writing Poems and Thoughts</h4>
+  <p>
+    A poem is a piece of writing, usually using some kind of rhyme scheme or metrical pattern, that expresses a writer’s feelings (or the feelings of a persona). They can tell stories, record memories, express desire, and share information. The best poems are those that tap into the universality of human experience and appeal to a wide variety of readers.
+    <br>
+    Yes, I am a Poet and Writer.
+   <!-- <ol>
+      <li>Poems</li>
+      <li>Gardening</li>
+      <li>Exercise</li>
+   </ol> -->
+  </p>
+  <br>
+  <br>
+  <h3>Sample Writings:</h3>
+  <p>[This is only for educational purpose. Don't judge/ mess with the writing of a Poet.]
+    <br>The following are some examples of my writings: 
+  </p>
+  <!-- Image Slider -->
+  <div id="carouselExampleControlsNoTouching" class="carousel slide" data-bs-touch="false" data-bs-interval="false">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="/myWritings/1.png" class="d-block w-100" alt="...">
+      </div>
+
+      <div class="carousel-item">
+        <img src="/myWritings/2.png" class="d-block w-100" alt="...">
+      </div>
+
+      <div class="carousel-item">
+        <img src="/myWritings/3.png" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="/myWritings/4.png" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="/myWritings/5.png" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="/myWritings/6.png" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="/myWritings/7.png" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="/myWritings/8.png" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="/myWritings/9.png" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="/myWritings/10.png" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="/myWritings/11.png" class="d-block w-100" alt="...">
+      </div>
+
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControlsNoTouching" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControlsNoTouching" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+ <p>Fig: Image Slider of Some Writings</p>
+  <!--  -->
+</div>
+<br><br> <hr>
+
+
+
+ <!-- hobby 8 -->
+ <div class="hobby">
+  <h4>8. Gardening</h4>
+  <p>
+    Gardening, the laying out and care of a plot of ground devoted partially or wholly to the growing of plants such as flowers, herbs, or vegetables.
+<br> <br>
+    Gardening can be considered both as an art, concerned with arranging plants harmoniously in their surroundings, and as a science, encompassing the principles and techniques of plant cultivation. Because plants are often grown in conditions markedly different from those of their natural environment, it is necessary to apply to their cultivation techniques derived from plant physiology, chemistry, and botany, modified by the experience of the planter. The basic principles involved in growing plants are the same in all parts of the world, but the practice naturally needs much adaptation to local conditions.
+   <!-- <ol>
+     
+      <li>Gardening</li>
+      <li>Exercise</li>
+   </ol> -->
+  </p>
+  <img src="https://th.bing.com/th/id/OIP.vzNr8jdcdFzKjZUl54wn_gHaE8?rs=1&pid=ImgDetMain"  alt="" height="380px" width="60%">
+  <br>
+</div>
+<br><br> <hr>
+
+
+<!-- br -->
+ <br>
+
+
+
+
+
+      <!-- Links -->
+      <div class="links">
+        <a href="https://www.instagram.com/mansoon.jk__/">
+          <i class="bi bi-instagram"></i
+        ></a>
+        <a href="https://www.linkedin.com/in/mansoon-mohanty-00a06b254/"
+          ><i class="bi bi-linkedin"></i
+        ></a>
+        <a href="https://github.com/MansoonM"><i class="bi bi-github"></i></a>
+        <a href="mansoonmohanty@gmail.com"><i class="bi bi-envelope"></i></a>
+        <a href="https://www.facebook.com/mansoon.mohanty.319/"
+          ><i class="bi bi-facebook"></i
+        ></a>
+      </div>
+      <div class="copy">
+        <p>@copyright.reserved for Mansoon's portfolio</p>
+      </div>
+
+
+
+
+
+
+
+    </div>
+    <!--  -->
+    <!--  -->
+    <!--  -->
+    <!-- Optional JavaScript; choose one of the two! -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

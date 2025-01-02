@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+
+    <title>Portfolio: Mansoon Mohanty</title>
+    <link rel="shortcut icon" href="/me.jpg" type="image/x-icon" />
+    <style>
+      /* css */
+      body {
+        background-color: rgb(24, 22, 22);
+        color: white;
+      }
+      span {
+        color: rgb(95, 95, 241);
+      }
+      .btn.btn-dark a {
+        color: white;
+        text-decoration: none;
+      }
+
+      .rounded {
+        height: 25rem;
+        /* margin: 4rem 5rem; */
+        border-radius: 50%;
+        transition: 0.3s ease-in-out;
+        box-shadow: 0 0 0.2rem rgb(3, 46, 187);
+      }
+      .rounded:hover {
+        height: 25.3rem;
+        box-shadow: 0 0 0.7rem rgb(3, 46, 187);
+      }
+      h1 {
+        color: orange;
+      }
+      .project a {
+        color: rgb(72, 72, 247);
+      }
+      .project a:hover {
+        color: blueviolet;
+      }
+      button {
+        box-shadow: 0 0 0.2rem blue;
+      }
+      button:hover {
+        box-shadow: 0 0 0.5rem blue;
+      }
+      .container {
+        text-align: center;
+      }
+
+      .links {
+        width: 100%;
+
+        margin-top: 3.5rem;
+        display: flex;
+        justify-content: space-evenly;
+      }
+      .links a {
+        font-size: 1.5rem;
+        transition: 0.3s ease-in-out;
+        color: red;
+      }
+      .links a:hover {
+        font-size: 1.6rem;
+        color: blue;
+      }
+      .copy p {
+        color: rgb(178, 178, 226);
+        margin-top: 2rem;
+      }
+      img {
+        transition: 0.4s ease-in-out;
+      }
+      img:hover {
+        box-shadow: 0 0 0.7rem white;
+      }
+      /* Media */
+
+      @media screen and (max-width: 700px) {
+        img {
+          width: 90%;
+          height: 235px;
+        }
+      }
+      @media screen and (max-width: 450px) {
+        img {
+          width: 98%;
+          height: 200px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Landing Page  -->
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Portfolio of Mansoon</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div
+          class="collapse navbar-collapse justify-content-end"
+          id="navbarNav"
+        >
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/2_about.html">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/3_skills.html">Skills</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link active" href="/4_projects.html">Projects</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="/5_experience.html">Experience</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="/6_hobbies.html">Hobbies</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="/7_contact.html">Contact</a>
+            </li>
+            <a href=""></a>
+            <!--for space-->
+
+            <li class="nav-item">
+              <a class="nav-link" href="#"></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#"></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- body of home page -->
+    <div class="container">
+      <!-- project tic tac toe -->
+      <br />
+      <div class="project">
+        <h1>Project: Tic Tac Toe Website</h1>
+        <h4>Type: Frontend Development</h4>
+        <br />
+
+        <img
+          src="/Website Images/Screenshot_30-12-2024_85552_tic-tac-toe-mansoon.netlify.app.jpeg"
+          height="300px"
+        />
+        <br />
+        <br />
+        <p>
+          Programming Languages: HTML, CSS, Javascript
+          <br />
+          GitHub Link:
+          <a
+            href="https://github.com/MansoonM/HTML-CSS-JAVASCRIPT-Projects/tree/dccee9e20b123c1c9412c4ddeddbd6cd1a6c19a8/tic%20toc%20toe"
+            >Tic Tac Toe GitHub Link</a
+          >
+          <br />
+          Live Link:
+          <a href="https://tic-tac-toe-mansoon.netlify.app/"
+            >Tic Tac Toe Website Link</a
+          >
+        </p>
+      </div>
+      <br />
+      <hr />
+      <br />
+      <!-- project Phone Pe-->
+      <div class="project">
+        <h1>Project: PhonePe Clone Website</h1>
+        <h4>Type: Frontend Development</h4>
+        <br />
+        <img
+          src="/Website Images/Screenshot_30-12-2024_84427_phonepe-mansoon.netlify.app.jpeg"
+          height="300px"
+        />
+        <br />
+        <br />
+        <p>
+          Programming Languages: HTML, CSS
+          <br />
+          GitHub Link:
+          <a
+            href="https://github.com/MansoonM/Clone-Websites/tree/20955669645beb5fd7ea19eb8de84a4050a26e5e/PhonePe"
+            >PhonePe Clone GitHub Link</a
+          >
+          <br />
+          Live Link:
+          <a href="https://phonepe-mansoon.netlify.app/"
+            >PhonePe Website Live Link</a
+          >
+        </p>
+      </div>
+      <br />
+      <hr />
+      <br />
+      <!-- project Digital Clock -->
+      <div class="project">
+        <h1>Project: Digital Clock Website</h1>
+        <h4>Type: Frontend Development</h4>
+        <br />
+        <img
+          src="/Website Images/Screenshot_30-12-2024_85837_mansoon-digital-clock.netlify.app.jpeg"
+          height="300px"
+        /><br />
+        <br />
+        <p>
+          Programming Languages: HTML, CSS, Javascript
+          <br />
+          GitHub Link:
+          <a
+            href="https://github.com/MansoonM/HTML-CSS-JAVASCRIPT-Projects/tree/dccee9e20b123c1c9412c4ddeddbd6cd1a6c19a8/DigitalClock"
+            >Digital clock GitHub Link</a
+          >
+          <br />
+          Live Link:
+          <a href="https://mansoon-digital-clock.netlify.app/"
+            >Digital Clock Website Live Link</a
+          >
+        </p>
+      </div>
+      <br />
+      <hr />
+      <br />
+      <!-- project Travel Website -->
+      <div class="project">
+        <h1>Project: Travel Website</h1>
+        <h4>Type: Full Stack Web Development</h4>
+        <br />
+        <img src="/Website Images/2_a_About Page.jpeg" height="300px" /><br />
+        <br />
+        <p>
+          Programming Languages: HTML, CSS, JS, PHP, MySQL, Bootstrap
+          <br />
+          GitHub Link:
+          <a href="https://github.com/MansoonM/PHP"
+            >Travel Website GitHub Link</a
+          >
+          <br />
+          Live Link: Not Deployed
+        </p>
+      </div>
+      <br />
+      <hr />
+      <br />
+      <!-- project Rock, Paper, Scissor -->
+      <div class="project">
+        <h1>Project: Rock, Paper, Scissors Website</h1>
+        <h4>Type: Frontend Development</h4>
+        <br />
+        <img
+          src="/Website Images/Screenshot_30-12-2024_939_mansoon-rockpaperscissor.netlify.app.jpeg"
+          height="300px"
+        /><br />
+        <br />
+        <p>
+          Programming Languages: HTML, CSS, JS
+          <br />
+          GitHub Link:
+          <a
+            href="https://github.com/MansoonM/HTML-CSS-JAVASCRIPT-Projects/tree/e1ae4296235dfb4f35b08647850c20e54726362e/Stone%2CPaper%2CScissor"
+            >Rock, Paper, Scissors GitHub Link</a
+          >
+          <br />
+          Live Link:
+          <a href="https://mansoon-rockpaperscissor.netlify.app/"
+            >Rock, Paper, Scissors Website Live Link</a
+          >
+        </p>
+      </div>
+      <br />
+      <hr />
+      <br />
+      <!-- project To-do List  -->
+      <div class="project">
+        <h1>Project: To-do List Website</h1>
+        <h4>Type: Frontend Development</h4>
+        <br />
+        <img
+          src="/Website Images/Screenshot_30-12-2024_916_to-do-list-mansoon.netlify.app.jpeg"
+          height="300px"
+        /><br />
+        <br />
+        <p>
+          Programming Languages: HTML, CSS, Javascript
+          <br />
+          GitHub Link: <a href=""></a>
+          <br />
+          Live Link:
+          <a href="https://to-do-list-mansoon.netlify.app/"
+            >To-do List Website Live Link</a
+          >
+        </p>
+      </div>
+      <br />
+      <hr />
+      <br />
+      <!-- project tic tac toe -->
+      <div class="project">
+        <h1>Project: Multiplication App</h1>
+        <h4>Type: Frontend Development</h4>
+        <br />
+        <img
+          src="/Website Images/Screenshot_30-12-2024_9151_mansoon-multiplication-app.netlify.app.jpeg"
+          height="300px"
+        /><br />
+        <br />
+        <p>
+          Programming Languages: HTML, CSS, JavaScript
+          <br />
+          GitHub Link:
+          <a
+            href="https://github.com/MansoonM/HTML-CSS-JAVASCRIPT-Projects/tree/e1ae4296235dfb4f35b08647850c20e54726362e/Multiplication%20App"
+            >Multiplication Website GitHub Link</a
+          >
+          <br />
+          Live Link:
+          <a href="https://mansoon-multiplication-app.netlify.app/?"
+            >Multiplication Website Live Link</a
+          >
+        </p>
+      </div>
+
+      <!-- project Simple Portfolio Website -->
+      <div class="project">
+        <h1>Project: Simple Portfolio Website</h1>
+        <h4>Type: Full Stack Web Development</h4>
+        <br />
+        <img
+          src="/Website Images/Screenshot_30-12-2024_85810_mansoon-simpleportfolio3.netlify.app.jpeg"
+          height="350px"
+          width="50%"
+        /><br />
+        <br />
+        <p>
+          Programming Languages: HTML, CSS, JS, Bootstrap
+          <br />
+          GitHub Link: Not available
+          <br />
+          Live Link:
+          <a href="https://mansoon-simpleportfolio3.netlify.app/#home">
+            Simple Portfolio Website Live Link</a
+          >
+        </p>
+      </div>
+      <br />
+      <hr />
+      <br />
+      <!-- Links -->
+      <div class="links">
+        <a href="https://www.instagram.com/mansoon.jk__/">
+          <i class="bi bi-instagram"></i
+        ></a>
+        <a href="https://www.linkedin.com/in/mansoon-mohanty-00a06b254/"
+          ><i class="bi bi-linkedin"></i
+        ></a>
+        <a href="https://github.com/MansoonM"><i class="bi bi-github"></i></a>
+        <a href="mansoonmohanty@gmail.com"><i class="bi bi-envelope"></i></a>
+        <a href="https://www.facebook.com/mansoon.mohanty.319/"
+          ><i class="bi bi-facebook"></i
+        ></a>
+      </div>
+      <div class="copy">
+        <p>@copyright.reserved for Mansoon's portfolio</p>
+      </div>
+    </div>
+    <!--  -->
+    <!--  -->
+    <!--  -->
+    <!-- Optional JavaScript; choose one of the two! -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
