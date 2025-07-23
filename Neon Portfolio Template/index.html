@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neonfolio | Creative Frontend Portfolio</title>
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts: Tektur, Orbitron, Exo 2 -->
+    <link href="https://fonts.googleapis.com/css2?family=Tektur:wght@700&family=Orbitron:wght@700&family=Exo+2:wght@400;600&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <!-- GSAP for advanced animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <style>
+        :root, [data-bs-theme="dark"] {
+            --neon: #e100ff;
+            --neon-accent: #00fff2;
+            --neon-bg: #0f0020;
+            --neon-card: #1f0a37;
+            --neon-shadow: 0 0 32px 10px var(--neon);
+            --transition: all 0.4s cubic-bezier(.68,-0.55,.27,1.55);
+        }
+        [data-bs-theme="light"] {
+            --neon: #6c00ff;
+            --neon-accent: #00d4ff;
+            --neon-bg: #ece6ff;
+            --neon-card: #f7f3ff;
+            --neon-shadow: 0 0 32px 10px var(--neon);
+            --transition: all 0.4s cubic-bezier(.68,-0.55,.27,1.55);
+            color: #1f0a37;
+        }
+        body {
+            font-family: 'Exo 2', 'Orbitron', 'Tektur', sans-serif;
+            background: radial-gradient(ellipse at top right, var(--neon-bg) 60%, #19162b 100%);
+            color: inherit;
+            min-height: 100vh;
+            overflow-x: hidden;
+            transition: var(--transition);
+        }
+        .neon-glow {
+            color: var(--neon);
+            text-shadow: 0 0 8px var(--neon), 0 0 32px var(--neon-accent);
+            animation: neonPulse 2s infinite alternate;
+        }
+        @keyframes neonPulse {
+            0% { text-shadow: 0 0 8px var(--neon), 0 0 32px var(--neon-accent); }
+            100% { text-shadow: 0 0 16px var(--neon-accent), 0 0 48px var(--neon); }
+        }
+        .animated-bg {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100vw; height: 100vh;
+            z-index: -2;
+            overflow: hidden;
+        }
+        .blob {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(50px);
+            opacity: 0.7;
+            animation: blobMove 16s infinite alternate ease-in-out;
+        }
+        .blob1 { background: var(--neon); width: 600px; height: 600px; top: -100px; left: -100px; animation-delay: 0s;}
+        .blob2 { background: var(--neon-accent); width: 400px; height: 400px; bottom: -120px; right: -120px; animation-delay: 3s;}
+        .blob3 { background: #ff00c8; width: 250px; height: 250px; top: 60%; left: 70vw; animation-delay: 1s;}
+        @keyframes blobMove {
+            0% { transform: scale(1) translateY(0);}
+            40% { transform: scale(1.24) translateY(-50px);}
+            100% { transform: scale(0.9) translateY(35px);}
+        }
+        .navbar {
+            background-color: rgba(21, 10, 35, 0.95) !important;
+            border-bottom: 2px solid var(--neon);
+            box-shadow: 0 0 10px 0 var(--neon);
+        }
+        .navbar-brand {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2rem;
+            color: var(--neon)!important;
+            letter-spacing: 3px;
+            text-shadow: 0 0 12px var(--neon);
+        }
+        .nav-link {
+            color: #fff !important;
+            font-weight: 600;
+            text-transform: uppercase;
+            position: relative;
+        }
+        .nav-link:hover, .nav-link.active {
+            color: var(--neon-accent)!important;
+            text-shadow: 0 0 10px var(--neon-accent);
+        }
+        .nav-link::after {
+            content: '';
+            display: block;
+            margin: 0 auto;
+            width: 0%;
+            height: 2px;
+            background: linear-gradient(90deg, var(--neon), var(--neon-accent));
+            transition: 0.4s;
+        }
+        .nav-link:hover::after, .nav-link.active::after {
+            width: 80%;
+        }
+        .theme-toggle {
+            border: none;
+            background: none;
+            color: var(--neon-accent);
+            font-size: 1.7rem;
+            cursor: pointer;
+            margin-left: 1rem;
+            transition: var(--transition);
+        }
+        .theme-toggle:hover { color: var(--neon); }
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+            padding-top: 110px;
+        }
+        .hero-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: clamp(2rem, 10vw, 5rem);
+            font-weight: 700;
+            letter-spacing: 6px;
+            text-transform: uppercase;
+            background: linear-gradient(90deg, var(--neon), var(--neon-accent));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 1rem;
+        }
+        .hero-subtitle {
+            font-size: 1.5rem;
+            color: var(--neon-accent);
+            margin-bottom: 2rem;
+            font-family: 'Exo 2', sans-serif;
+            letter-spacing: 2px;
+        }
+        .hero-buttons {
+            display: flex;
+            gap: 1.2rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+        .btn-neon {
+            border: none;
+            border-radius: 30px;
+            padding: .8rem 2.5rem;
+            background: linear-gradient(90deg, var(--neon), var(--neon-accent));
+            color: #fff;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            box-shadow: 0 0 16px var(--neon);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+        .btn-neon:after {
+            content: '';
+            position: absolute;
+            left: -60%;
+            top: 0;
+            width: 120%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(225,0,255,0.13), transparent);
+            transition: left .6s cubic-bezier(.68,-0.55,.27,1.55);
+            z-index: 0;
+        }
+        .btn-neon:hover:after { left: 60%; }
+        .btn-neon:hover, .btn-neon:focus {
+            box-shadow: 0 0 36px 0 var(--neon-accent);
+            color: var(--neon-accent);
+            scale: 1.06;
+        }
+        section {
+            padding: 6rem 0 4rem 0;
+            position: relative;
+        }
+        .section-title h2 {
+            font-size: 2.7rem;
+            font-family: 'Tektur', sans-serif;
+            background: linear-gradient(90deg, var(--neon), var(--neon-accent));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 1.3rem;
+        }
+        .card-trendy {
+            background: rgba(31, 10, 55, 0.78);
+            border: 1.5px solid var(--neon);
+            border-radius: 18px;
+            box-shadow: var(--neon-shadow);
+            padding: 2.2rem;
+            transition: var(--transition);
+            position: relative;
+        }
+        .card-trendy:hover {
+            transform: translateY(-8px) scale(1.03);
+            box-shadow: 0 0 44px 0 var(--neon-accent);
+            border-color: var(--neon-accent);
+        }
+        .skill-icon {
+            font-size: 3.2rem;
+            color: var(--neon-accent);
+            transition: var(--transition);
+            margin-bottom: 1.1rem;
+        }
+        .skill-item:hover .skill-icon { color: var(--neon); scale: 1.2; }
+        .timeline {
+            display: flex;
+            flex-direction: column;
+            gap: 2.5rem;
+            position: relative;
+            margin: 3rem auto;
+        }
+        .timeline-item {
+            width: 100%;
+            position: relative;
+            margin-bottom: 0;
+        }
+        .timeline-content {
+            background: rgba(31, 10, 55, 0.85);
+            border: 1.5px solid var(--neon-accent);
+            border-radius: 16px;
+            padding: 1.6rem 1.4rem;
+            box-shadow: 0 0 18px 0 var(--neon);
+            position: relative;
+            transition: var(--transition);
+        }
+        .timeline-date {
+            color: var(--neon-accent);
+            font-weight: 600;
+            margin-bottom: 0.7rem;
+            font-size: 1.1rem;
+        }
+        .form-control {
+            background: rgba(31, 10, 55, 0.82);
+            border: 1.5px solid var(--neon);
+            color: #fff;
+            font-size: 1rem;
+            transition: var(--transition);
+            border-radius: 8px;
+        }
+        .form-control:focus {
+            border-color: var(--neon-accent);
+            box-shadow: 0 0 18px var(--neon-accent);
+        }
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        .social-icon {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            background: linear-gradient(145deg, var(--neon), var(--neon-accent));
+            color: #fff;
+            font-size: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+            box-shadow: 0 0 20px var(--neon);
+        }
+        .social-icon:hover {
+            background: var(--neon-accent);
+            color: var(--neon);
+            box-shadow: 0 0 32px var(--neon);
+            transform: scale(1.08) translateY(-3px);
+        }
+        .footer {
+            background: rgba(25, 10, 35, 0.95);
+            border-top: 2px solid var(--neon);
+            color: #fff;
+            padding: 3rem 0 1rem 0;
+        }
+        .footer p { font-size: 1rem; color: var(--neon-accent); }
+        .animate-on-scroll { opacity: 0; }
+        .animated-show { opacity: 1 !important; transition: opacity .7s cubic-bezier(.68,-0.55,.27,1.55);}
+        @media (max-width: 991px) {
+            section { padding: 3rem 0 2rem 0;}
+            .hero-title { font-size: 2.1rem;}
+        }
+    </style>
+</head>
+<body>
+    <!-- Animated Neon Blob Background -->
+    <div class="animated-bg">
+        <div class="blob blob1"></div>
+        <div class="blob blob2"></div>
+        <div class="blob blob3"></div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand neon-glow" href="#">Neonfolio</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+                <button class="theme-toggle" id="themeToggle"><i class="fas fa-moon"></i></button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <h1 class="hero-title animate__animated animate__fadeInDown">Hello, I'm <span class="neon-glow">Creative</span></h1>
+        <p class="hero-subtitle animate__animated animate__fadeIn animate__delay-1s">FRONTEND DEVELOPER & UI/UX DESIGNER</p>
+        <p class="animate__animated animate__fadeIn animate__delay-2s">I craft immersive digital experiences using modern technologies & futuristic design trends.</p>
+        <div class="hero-buttons">
+            <a href="#about" class="btn btn-neon animate__animated animate__fadeInUp animate__delay-3s">About Me</a>
+            <a href="#contact" class="btn btn-neon animate__animated animate__fadeInUp animate__delay-4s">Hire Me</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <div class="section-title text-center">
+                <h2>About Me</h2>
+            </div>
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0 animate-on-scroll">
+                    <img src="https://placehold.co/600x800" alt="Professional portrait in neon cyberpunk style" class="img-fluid card-trendy">
+                </div>
+                <div class="col-lg-6 animate-on-scroll">
+                    <div class="card-trendy">
+                        <h3>Who I Am</h3>
+                        <p>I'm a creative frontend developer and UI/UX designer with a passion for futuristic designs and interactive user experiences. My expertise lies in React, Vue.js, and modern CSS, blending technology and art.</p>
+                        <h3 class="mt-4">What I Do</h3>
+                        <p>I design and develop responsive, high-performance websites and apps, focusing on aesthetic detail and seamless usability. My approach fuses visual excitement with clear functionality.</p>
+                        <div class="d-flex flex-wrap gap-2 mt-4">
+                            <span class="badge bg-dark">HTML5</span>
+                            <span class="badge bg-dark">CSS3</span>
+                            <span class="badge bg-dark">JavaScript</span>
+                            <span class="badge bg-dark">React</span>
+                            <span class="badge bg-dark">Vue.js</span>
+                            <span class="badge bg-dark">Figma</span>
+                            <span class="badge bg-dark">UI/UX</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <div class="container">
+            <div class="section-title text-center">
+                <h2>My Skills</h2>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4 animate-on-scroll">
+                    <div class="card-trendy skill-item text-center">
+                        <i class="skill-icon fab fa-react"></i>
+                        <h3>Frontend Development</h3>
+                        <p>Building modern, responsive web apps using React, Vue, and cutting-edge frameworks.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 animate-on-scroll">
+                    <div class="card-trendy skill-item text-center">
+                        <i class="skill-icon fas fa-paint-brush"></i>
+                        <h3>UI/UX Design</h3>
+                        <p>Designing beautiful, intuitive user interfaces and digital experiences with Figma & Sketch.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 animate-on-scroll">
+                    <div class="card-trendy skill-item text-center">
+                        <i class="skill-icon fas fa-mobile-alt"></i>
+                        <h3>Mobile Apps</h3>
+                        <p>Developing cross-platform mobile apps with React Native and Flutter.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience">
+        <div class="container">
+            <div class="section-title text-center">
+                <h2>My Experience</h2>
+            </div>
+            <div class="timeline d-flex flex-column gap-4">
+                <div class="timeline-item animate-on-scroll">
+                    <div class="timeline-content card-trendy">
+                        <div class="timeline-date">2021 - Present</div>
+                        <h4>Senior Frontend Developer</h4>
+                        <p>TechVision Solutions, New York</p>
+                        <p>Leading frontend teams, architecting complex interfaces, and optimizing performance.</p>
+                    </div>
+                </div>
+                <div class="timeline-item animate-on-scroll">
+                    <div class="timeline-content card-trendy">
+                        <div class="timeline-date">2018 - 2021</div>
+                        <h4>UI/UX Designer</h4>
+                        <p>Creative Minds Agency, San Francisco</p>
+                        <p>Designed user interfaces for web/mobile apps, conducted user research and testing.</p>
+                    </div>
+                </div>
+                <div class="timeline-item animate-on-scroll">
+                    <div class="timeline-content card-trendy">
+                        <div class="timeline-date">2016 - 2018</div>
+                        <h4>Junior Web Developer</h4>
+                        <p>Digital Wave Studios, London</p>
+                        <p>Developed responsive websites, maintained projects, collaborated with creative teams.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <div class="section-title text-center">
+                <h2>Get In Touch</h2>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 animate-on-scroll">
+                    <div class="card-trendy p-4 h-100">
+                        <h3>Contact Information</h3>
+                        <div class="d-flex align-items-center my-4">
+                            <i class="fas fa-envelope me-3" style="color: var(--neon-accent); font-size: 1.5rem;"></i>
+                            <span>hello@example.com</span>
+                        </div>
+                        <div class="d-flex align-items-center my-4">
+                            <i class="fas fa-phone-alt me-3" style="color: var(--neon-accent); font-size: 1.5rem;"></i>
+                            <span>+1 (555) 123-4567</span>
+                        </div>
+                        <div class="d-flex align-items-center my-4">
+                            <i class="fas fa-map-marker-alt me-3" style="color: var(--neon-accent); font-size: 1.5rem;"></i>
+                            <span>San Francisco, CA</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 animate-on-scroll">
+                    <div class="card-trendy p-4">
+                        <form>
+                            <div class="mb-3">
+                                <input type="text" class="form-control" placeholder="Your Name" required>
+                            </div>
+                            <div class="mb-3">
+                                <input type="email" class="form-control" placeholder="Your Email" required>
+                            </div>
+                            <div class="mb-3">
+                                <input type="text" class="form-control" placeholder="Subject">
+                            </div>
+                            <div class="mb-3">
+                                <textarea class="form-control" rows="5" placeholder="Your Message" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-neon">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container text-center">
+            <p>© 2025 Neonfolio. All Rights Reserved.</p>
+            <div class="social-icons">
+                <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- GSAP Reveal Animations & Theme Toggle -->
+    <script>
+        // Theme Toggle
+        const themeToggle = document.getElementById('themeToggle');
+        const themeIcon = themeToggle.querySelector('i');
+        function setTheme(theme) {
+            document.documentElement.setAttribute('data-bs-theme', theme);
+            if (theme === 'dark') {
+                themeIcon.classList.remove('fa-sun');
+                themeIcon.classList.add('fa-moon');
+            } else {
+                themeIcon.classList.remove('fa-moon');
+                themeIcon.classList.add('fa-sun');
+            }
+            localStorage.setItem('theme', theme);
+        }
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = document.documentElement.getAttribute('data-bs-theme');
+            setTheme(currentTheme === 'dark' ? 'light' : 'dark');
+        });
+        document.addEventListener('DOMContentLoaded', () => {
+            const savedTheme = localStorage.getItem('theme') || 'dark';
+            setTheme(savedTheme);
+        });
+
+        // Smooth scroll for navbar links
+        document.querySelectorAll('a.nav-link').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const target = document.querySelector(this.getAttribute('href'));
+                if(target) {
+                    e.preventDefault();
+                    target.scrollIntoView({behavior: 'smooth'});
+                    document.querySelectorAll('.nav-link').forEach(link => link.classList.remove('active'));
+                    this.classList.add('active');
+                }
+            });
+        });
+
+        // Animate-on-scroll: GSAP
+        function animateOnScroll() {
+            document.querySelectorAll('.animate-on-scroll').forEach(el => {
+                const rect = el.getBoundingClientRect();
+                if(rect.top < window.innerHeight - 60) {
+                    el.classList.add('animated-show');
+                    gsap.fromTo(el, {y: 60, opacity: 0}, {y: 0, opacity: 1, duration: 1, ease: "power3.out"});
+                }
+            });
+        }
+        window.addEventListener('scroll', animateOnScroll);
+        window.addEventListener('load', animateOnScroll);
+    </script>
+</body>
+</html>
